@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BugTrackerModel;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace BugTrackerFrontend.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+
+        public IList<Bug> _bugs;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -26,6 +30,7 @@ namespace BugTrackerFrontend.Pages
                 var bugJson = await response.Content.ReadAsStringAsync();
                 var bugs = JArray.Parse(bugJson);
                 ViewData["Message"] = $"Number of bugs in bug DB :{bugs.Count}";
+                ViewData["Bugs"] = bugs.ToObject<List<Bug>>();
             }
         }
     }

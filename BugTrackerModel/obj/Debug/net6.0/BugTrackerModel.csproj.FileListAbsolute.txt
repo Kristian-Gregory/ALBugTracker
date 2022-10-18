@@ -10,3 +10,15 @@ C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.dll
 C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\refint\BugTrackerModel.dll
 C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.pdb
 C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\ref\BugTrackerModel.dll
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\bin\Debug\net6.0\BugTrackerModel.deps.json
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\bin\Debug\net6.0\BugTrackerModel.dll
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\bin\Debug\net6.0\BugTrackerModel.pdb
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.csproj.AssemblyReference.cache
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.AssemblyInfoInputs.cache
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.AssemblyInfo.cs
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.csproj.CoreCompileInputs.cache
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.dll
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\refint\BugTrackerModel.dll
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.pdb
+C:\Users\kristiang\code\ALBugTracker\BugTrackerModel\obj\Debug\net6.0\ref\BugTrackerModel.dll

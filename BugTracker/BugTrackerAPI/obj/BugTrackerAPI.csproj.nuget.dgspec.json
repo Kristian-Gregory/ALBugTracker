@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\Kristian\\airelogic\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj": {}
+    "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Work\\Kristian\\airelogic\\BugTrackerModel\\BugTrackerModel.csproj": {
+    "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTrackerModel\\BugTrackerModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Kristian\\airelogic\\BugTrackerModel\\BugTrackerModel.csproj",
+        "projectUniqueName": "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTrackerModel\\BugTrackerModel.csproj",
         "projectName": "BugTrackerModel",
-        "projectPath": "C:\\Work\\Kristian\\airelogic\\BugTrackerModel\\BugTrackerModel.csproj",
-        "packagesPath": "C:\\Users\\Kristian\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Kristian\\airelogic\\BugTrackerModel\\obj\\",
+        "projectPath": "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTrackerModel\\BugTrackerModel.csproj",
+        "packagesPath": "C:\\Users\\kristiang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTrackerModel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kristian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kristiang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.episerver.com/feed/packages.svc/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,20 +59,17 @@
         }
       }
     },
-    "C:\\Work\\Kristian\\airelogic\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj": {
+    "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Kristian\\airelogic\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj",
+        "projectUniqueName": "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj",
         "projectName": "BugTrackerAPI",
-        "projectPath": "C:\\Work\\Kristian\\airelogic\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj",
-        "packagesPath": "C:\\Users\\Kristian\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Kristian\\airelogic\\BugTracker\\BugTrackerAPI\\obj\\",
+        "projectPath": "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTracker\\BugTrackerAPI\\BugTrackerAPI.csproj",
+        "packagesPath": "C:\\Users\\kristiang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTracker\\BugTrackerAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kristian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kristiang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,15 +77,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.episerver.com/feed/packages.svc/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Work\\Kristian\\airelogic\\BugTrackerModel\\BugTrackerModel.csproj": {
-                "projectPath": "C:\\Work\\Kristian\\airelogic\\BugTrackerModel\\BugTrackerModel.csproj"
+              "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTrackerModel\\BugTrackerModel.csproj": {
+                "projectPath": "C:\\Users\\kristiang\\code\\ALBugTracker\\BugTrackerModel\\BugTrackerModel.csproj"
               }
             }
           }

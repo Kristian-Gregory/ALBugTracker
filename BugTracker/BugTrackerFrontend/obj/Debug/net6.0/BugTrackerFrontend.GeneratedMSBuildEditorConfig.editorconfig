@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BugTrackerFrontend
 build_property.RootNamespace = BugTrackerFrontend
-build_property.ProjectDir = C:\Work\Kristian\airelogic\BugTracker\BugTrackerFrontend\
+build_property.ProjectDir = C:\Users\kristiang\code\ALBugTracker\BugTracker\BugTrackerFrontend\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Work\Kristian\airelogic\BugTracker\BugTrackerFrontend
+build_property.MSBuildProjectDirectory = C:\Users\kristiang\code\ALBugTracker\BugTracker\BugTrackerFrontend
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Bugs/Create.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Bugs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVnc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Bugs/Delete.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Bugs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVnc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Bugs/Details.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Bugs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVnc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Bugs/Edit.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Bugs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVnc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Bugs/Index.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Bugs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVnc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Error.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Index.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Privacy.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/_ViewImports.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/_ViewStart.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Kristian/airelogic/BugTracker/BugTrackerFrontend/Pages/Shared/_Layout.cshtml]
+[C:/Users/kristiang/code/ALBugTracker/BugTracker/BugTrackerFrontend/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vm0luv8rel

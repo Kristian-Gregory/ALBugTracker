@@ -1,4 +1,6 @@
 ﻿@page
+@using BugTrackerModel
+@using System.Collections
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,4 +10,21 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     <p>@ViewData["Message"]</p>
+
+    <table border="1">
+        <tr>
+            <th>Title</th> 
+            <th>State</th>
+            <th>ReportedDate</th>
+        </tr>
+    @foreach (Bug bug in ViewData["Bugs"] as List<Bug>)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => bug.Title)</td>
+            <td>@Html.DisplayFor(modelItem => bug.State)</td>
+            <td>@Html.DisplayFor(modelItem => bug.ReportedDate)</td>
+        </tr>
+    }
+    </table>
+
 </div>
