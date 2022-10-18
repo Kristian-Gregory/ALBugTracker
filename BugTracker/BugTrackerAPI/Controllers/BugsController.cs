@@ -25,7 +25,8 @@ namespace BugTrackerAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Bug>>> GetBugs()
         {
-            return await _context.Bugs.ToListAsync();
+            var bugs = await _context.Bugs.Include("Assignee").ToListAsync();
+            return bugs;
         }
 
         // GET: api/Bugs/5

@@ -7,8 +7,8 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Elite Bug Tracker</h1>
+    <p>Create <a href="/Bugs/Create">a new Bug Ticket</a>.</p>
     <p>@ViewData["Message"]</p>
 
     <table border="1">
@@ -16,6 +16,7 @@
             <th>Title</th> 
             <th>State</th>
             <th>ReportedDate</th>
+            <th>Assignee</th>
         </tr>
     @foreach (Bug bug in ViewData["Bugs"] as List<Bug>)
     {
@@ -23,6 +24,7 @@
             <td>@Html.DisplayFor(modelItem => bug.Title)</td>
             <td>@Html.DisplayFor(modelItem => bug.State)</td>
             <td>@Html.DisplayFor(modelItem => bug.ReportedDate)</td>
+            <td>@Html.DisplayFor(modelItem => bug.Assignee.Name)</td>
         </tr>
     }
     </table>

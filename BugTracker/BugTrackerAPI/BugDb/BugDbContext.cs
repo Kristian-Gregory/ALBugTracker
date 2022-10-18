@@ -13,6 +13,7 @@ namespace BugTrackerAPI.BugDb
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Bug>().ToTable("Bug");
+           //     .HasOne<Person>(b => b.Assignee);
             modelBuilder.Entity<Person>().ToTable("Person");
         }
 

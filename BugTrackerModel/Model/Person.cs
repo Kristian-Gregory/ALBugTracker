@@ -5,7 +5,7 @@ namespace BugTrackerModel
 {
     public class Person
     {
-        [Key]
+        [ForeignKey("Bug")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
         public string Name { get; set; }
