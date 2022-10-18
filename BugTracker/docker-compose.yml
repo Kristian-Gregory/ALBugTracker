@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  bugtrackerfrontend:
+    image: ${DOCKER_REGISTRY-}bugtrackerfrontend
+    build:
+      context: .
+      dockerfile: BugTrackerFrontend/Dockerfile
+
+  bugtrackerapi:
+    image: ${DOCKER_REGISTRY-}bugtrackerapi
+    build:
+      context: .
+      dockerfile: BugTrackerAPI/Dockerfile
+      
+  bugdb:
+    container_name: bugdb
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1401:1433"
+    environment:
+      MSSQL_SA_PASSWORD: "hello123HELLO!"
+      ACCEPT_EULA: "Y"

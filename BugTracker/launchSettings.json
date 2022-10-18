@@ -1,0 +1,43 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "bugtrackerapi": "StartDebugging",
+        "bugtrackerfrontend": "StartDebugging",
+        "bugdb": "StartWithoutDebugging"
+      }
+    },
+    "Start Redis": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "bugtrackerapi": "DoNotStart",
+        "bugtrackerfrontend": "DoNotStart",
+        "bugdb": "StartWithoutDebugging"
+      }
+    },
+    "Start Bug Tracker": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "bugtrackerfrontend",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",
+      "serviceActions": {
+        "bugtrackerapi": "StartDebugging",
+        "bugtrackerfrontend": "StartDebugging",
+        "bugdb": "StartWithoutDebugging"
+      }
+    },
+    "start DB": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "bugdb": "StartWithoutDebugging",
+        "bugtrackerapi": "DoNotStart",
+        "bugtrackerfrontend": "DoNotStart"
+      }
+    }
+  }
+}

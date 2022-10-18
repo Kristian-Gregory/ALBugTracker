@@ -1,0 +1,12 @@
+C:\Work\Kristian\airelogic\BugTrackerModel\bin\Debug\net6.0\BugTrackerModel.deps.json
+C:\Work\Kristian\airelogic\BugTrackerModel\bin\Debug\net6.0\BugTrackerModel.dll
+C:\Work\Kristian\airelogic\BugTrackerModel\bin\Debug\net6.0\BugTrackerModel.pdb
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.csproj.AssemblyReference.cache
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.AssemblyInfoInputs.cache
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.AssemblyInfo.cs
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.csproj.CoreCompileInputs.cache
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.dll
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\refint\BugTrackerModel.dll
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\BugTrackerModel.pdb
+C:\Work\Kristian\airelogic\BugTrackerModel\obj\Debug\net6.0\ref\BugTrackerModel.dll
