@@ -19,10 +19,13 @@ When I set out to design the application I wanted to optimize for the following.
 To run the application, from the root folder execute
 docker-compose -f BugTracker\docker-compose.yml -f "BugTracker\docker-compose.override.yml" -p dockercompose --ansi never up -d bugdb bugtrackerapi bugtrackerfrontend
 
-go to URL
+I've added a static port of 8443 on the front end web application so you should always be able to find the web application at
+https://localhost:8443
 
 # Swagger API documentation
-TODO: provide a static URL to the swagger docs on the API
+Swagger docs for the API can be found at
+http://localhost:8180/swagger
+TODO: make the API https only
 
 # Difficulties encountered
 I found I needed to switch to a more powerful development machine as the containers, particularly the sequel server container, were quite heavyweight and I initially set out on an inadequate machine for a dev task involving locally hosting this many containers.
