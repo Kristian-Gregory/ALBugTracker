@@ -16,8 +16,8 @@ When I set out to design the application I wanted to optimize for the following.
 * I wanted the database to be drawn from code automatically so I didn't need to add any additional steps for you to get started, and to allow for the database to be casually disposed of and rebuilt during early development
 
 # Running the application
-To run the application, from the root folder execute
-docker-compose -f BugTracker\docker-compose.yml -f "BugTracker\docker-compose.override.yml" -p dockercompose --ansi never up -d bugdb bugtrackerapi bugtrackerfrontend
+To run the application, from the 'BugTracker' folder run
+docker-compose up
 
 I've added a static port of 8443 on the front end web application so you should always be able to find the web application at
 https://localhost:8443
