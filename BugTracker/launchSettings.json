@@ -7,7 +7,7 @@
         "bugtrackerapi": "StartDebugging",
         "bugtrackerfrontend": "StartDebugging",
         "bugdb": "StartWithoutDebugging",
-        "integration-tests": "DoNotStart"
+        "integration-tests": "StartWithoutDebugging"
       }
     },
     "Run Integration Tests": {

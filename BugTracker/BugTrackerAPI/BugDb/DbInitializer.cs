@@ -81,8 +81,8 @@ namespace BugTrackerAPI.BugDb
                 },
                 new Bug
                 {
-                    Title = "Lag spike on register journey on Linux client",
-                    Description = "Performance poor on linux client when signing up users",
+                    Title = "Insect within computational unit",
+                    Description = "An insect within the hardware module is causing surprising behaviour",
                     ReportedDate = DateTime.Parse("2002-09-01"),
                     Assignee = grace
                 },

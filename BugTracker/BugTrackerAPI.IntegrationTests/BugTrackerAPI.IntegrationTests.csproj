@@ -36,4 +36,19 @@
     <ProjectReference Include="..\BugTrackerModel\BugTrackerModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="BugTrackerAPITests.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Setup\TestingCaseFixture.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Setup\TestingStartup.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Setup\TestingWebApplicationFactory.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

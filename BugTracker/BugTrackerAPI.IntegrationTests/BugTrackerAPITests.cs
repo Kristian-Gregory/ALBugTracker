@@ -10,6 +10,8 @@ using System.Net.Mime;
 using System.Text;
 using Newtonsoft.Json;
 using BugTrackerModel;
+using Newtonsoft.Json.Linq;
+using System.Xml.Linq;
 
 namespace BugTrackerAPI.IntegrationTests
 {
@@ -19,34 +21,33 @@ namespace BugTrackerAPI.IntegrationTests
         public async Task GetBug_All_ShouldReturnAllBugs()
         {
             // Arrange
-            Console.WriteLine($"base address is '{Client.BaseAddress}'");
-            var request = new System.Net.Http.HttpRequestMessage();
-            // bugtrackerapi is the container name
-            request.RequestUri = new Uri("http://bugtrackerapi/api/Bugs");
-            request.Method = HttpMethod.Get;
 
             // Act
-            var response = await Client.SendAsync(request);
-
+            var response = await Client.GetAsync("/api/Bugs");
 
             // Assert
+            var bugJson = await response.Content.ReadAsStringAsync();
+            var jbugs = JArray.Parse(bugJson);
+            var bugs = jbugs.ToObject<List<Bug>>();
+
             response.StatusCode.Should().Be(HttpStatusCode.OK);
+            bugs.First<Bug>().Title.Should().Be("Lag spike on register journey on Linux client");
+            
         }
 
-        [Fact(DisplayName = "Get bug 1")]
-        public async Task GetBug_first_RespondsOk()
+        [Fact(DisplayName = "Get bug 5")]
+        public async Task GetBug_five_ContainsAssignee()
         {
             // Arrange
 
-            var request = new System.Net.Http.HttpRequestMessage();
-            // bugtrackerapi is the container name
-            request.RequestUri = new Uri("http://bugtrackerapi/api/Bugs/5");
-            request.Method = HttpMethod.Get;
             // Act
-            var response = await Client.SendAsync(request);
+            var response = await Client.GetAsync("api/Bugs/5");
 
             // Assert
+            var bugJson = await response.Content.ReadAsStringAsync();
+            var bug = JObject.Parse(bugJson).ToObject<Bug>();
             response.StatusCode.Should().Be(HttpStatusCode.OK);
+            bug.Assignee.Name.Should().Be("Grace Hopper");
         }
 
         [Fact(DisplayName = "Create new bug")]
@@ -61,16 +62,8 @@ namespace BugTrackerAPI.IntegrationTests
                 State = BugState.Open
             };
 
-            // Call *bugtrackerapi*, and display its response in the page
-            var request = new System.Net.Http.HttpRequestMessage();
-
-            request.RequestUri = new Uri("http://bugtrackerapi/api/Bugs");
-            request.Method = HttpMethod.Post;
-
-            var json = JsonConvert.SerializeObject(bug);
-
-            request.Content = new StringContent(json, Encoding.UTF8, MediaTypeNames.Application.Json);
-            var response = await Client.SendAsync(request);
+            // Act
+            var response = await Client.PostAsJsonAsync("/api/Bugs", bug);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Created);

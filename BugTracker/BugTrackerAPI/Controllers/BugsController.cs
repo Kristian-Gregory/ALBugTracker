@@ -33,7 +33,7 @@ namespace BugTrackerAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Bug>> GetBug(int id)
         {
-            var bug = await _context.Bugs.FindAsync(id);
+            var bug = await _context.Bugs.Include("Assignee").FirstOrDefaultAsync(bug => bug.BugId == id);
 
             if (bug == null)
             {

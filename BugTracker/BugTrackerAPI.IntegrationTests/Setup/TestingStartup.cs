@@ -20,14 +20,14 @@ namespace BugTrackerAPI.IntegrationTests.Setup
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             services.AddControllers().AddNewtonsoftJson();
             services.AddDbContext<BugDbContext>(options =>
                 options
                     .UseSqlServer(Configuration.GetConnectionString("BugDbContext")));
 
             //services.AddScoped<IValidator<TimeEntry>, TimeEntryValidator>();
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,14 +52,13 @@ namespace BugTrackerAPI.IntegrationTests.Setup
             Migrate(app);
         }
 
-        
+
         private static void Migrate(IApplicationBuilder app)
         {
             using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
             using var context = serviceScope.ServiceProvider.GetService<BugDbContext>();
+            DbInitializer.Initialize(context);
 
-            context.Database.EnsureCreated();
         }
-        
     }
 }

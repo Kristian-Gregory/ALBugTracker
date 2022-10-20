@@ -24,10 +24,10 @@ namespace BugTrackerAPI.IntegrationTests.Setup
 
             Client.BaseAddress = new Uri("http://bugtrackerapi/");
 
-            //DbContext = _factory.Services.GetRequiredService<BugDbContext>();
+            DbContext = _factory.Services.GetRequiredService<BugDbContext>();
 
             // Open a transaction to not commit tests changes to db
-            //_transaction = DbContext.Database.BeginTransaction();
+            _transaction = DbContext.Database.BeginTransaction();
         }
 
         public void Dispose()
