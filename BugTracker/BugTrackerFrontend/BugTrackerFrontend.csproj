@@ -25,11 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BugTrackerModel\BugTrackerModel.csproj" />
+    <Folder Include="Pages\Bugs\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Bugs\" />
+    <ProjectReference Include="..\BugTrackerModel\BugTrackerModel.csproj" />
   </ItemGroup>
 
 </Project>

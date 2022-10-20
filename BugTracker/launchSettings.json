@@ -6,16 +6,18 @@
       "serviceActions": {
         "bugtrackerapi": "StartDebugging",
         "bugtrackerfrontend": "StartDebugging",
-        "bugdb": "StartWithoutDebugging"
+        "bugdb": "StartWithoutDebugging",
+        "integration-tests": "DoNotStart"
       }
     },
-    "Start Redis": {
+    "Run Integration Tests": {
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
+        "bugdb": "DoNotStart",
         "bugtrackerapi": "DoNotStart",
         "bugtrackerfrontend": "DoNotStart",
-        "bugdb": "StartWithoutDebugging"
+        "integration-tests": "StartWithoutDebugging"
       }
     },
     "Start Bug Tracker": {
@@ -27,7 +29,8 @@
       "serviceActions": {
         "bugtrackerapi": "StartDebugging",
         "bugtrackerfrontend": "StartDebugging",
-        "bugdb": "StartWithoutDebugging"
+        "bugdb": "StartWithoutDebugging",
+        "integration-tests": "DoNotStart"
       }
     },
     "start DB": {
@@ -36,7 +39,8 @@
       "serviceActions": {
         "bugdb": "StartWithoutDebugging",
         "bugtrackerapi": "DoNotStart",
-        "bugtrackerfrontend": "DoNotStart"
+        "bugtrackerfrontend": "DoNotStart",
+        "integration-tests": "DoNotStart"
       }
     }
   }

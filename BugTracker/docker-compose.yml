@@ -1,14 +1,21 @@
-version: '3.4'
+version: '3.5'
+
 
 services:
   bugtrackerfrontend:
+    container_name: bugtrackerfrontend
     image: ${DOCKER_REGISTRY-}bugtrackerfrontend
+    ports:
+      - "8443:443"
     build:
       context: .
       dockerfile: BugTrackerFrontend/Dockerfile
 
   bugtrackerapi:
+    container_name: bugtrackerapi
     image: ${DOCKER_REGISTRY-}bugtrackerapi
+    ports:
+      - "8180:80"
     build:
       context: .
       dockerfile: BugTrackerAPI/Dockerfile
@@ -21,3 +28,18 @@ services:
     environment:
       MSSQL_SA_PASSWORD: "hello123HELLO!"
       ACCEPT_EULA: "Y"
+
+  integration-tests:
+    container_name: integration-tests
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    environment:
+      - ConnectionStrings__BugDbContext=Server=bugdb,1433;User ID=SA;Password=hello123HELLO!
+    volumes:
+      - .:/BugTracker
+    working_dir: /BugTracker
+    command:
+      [
+        "dotnet",
+        "test",
+        "./BugTrackerAPI.IntegrationTests/BugTrackerAPI.IntegrationTests.csproj"
+      ]
