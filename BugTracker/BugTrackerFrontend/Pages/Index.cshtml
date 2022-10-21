@@ -16,15 +16,13 @@
             <th>Title</th> 
             <th>State</th>
             <th>ReportedDate</th>
-            <th>Assignee</th>
         </tr>
     @foreach (Bug bug in ViewData["Bugs"] as List<Bug>)
     {
         <tr>
-            <td>@Html.DisplayFor(modelItem => bug.Title)</td>
+            <td> <a href="/Bugs/Details?id=@bug.BugId">@Html.DisplayFor(modelItem => bug.Title)</a> </td>
             <td>@Html.DisplayFor(modelItem => bug.State)</td>
             <td>@Html.DisplayFor(modelItem => bug.ReportedDate)</td>
-            <td>@Html.DisplayFor(modelItem => bug.Assignee.Name)</td>
         </tr>
     }
     </table>

@@ -7,57 +7,70 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BugTrackerFrontend.Data;
 using BugTrackerModel;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Net.Mime;
+using System.Text;
 
 namespace BugTrackerFrontend.Pages.Bugs
 {
     public class DeleteModel : PageModel
     {
-        private readonly BugTrackerFrontend.Data.BugTrackerFrontendContext _context;
-
-        public DeleteModel(BugTrackerFrontend.Data.BugTrackerFrontendContext context)
-        {
-            _context = context;
-        }
-
-        [BindProperty]
+      [BindProperty]
       public Bug Bug { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Bug == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var bug = await _context.Bug.FirstOrDefaultAsync(m => m.BugId == id);
+            using (var client = new HttpClient())
+            {
+                var request = new HttpRequestMessage();
 
-            if (bug == null)
-            {
-                return NotFound();
+                request.RequestUri = new Uri($"http://bugtrackerapi/api/Bugs/{id}");
+                request.Method = HttpMethod.Get;
+
+                var response = await client.SendAsync(request);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return NotFound();
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+
+                Bug = JObject.Parse(json).ToObject<Bug>();
             }
-            else 
-            {
-                Bug = bug;
-            }
+
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Bug == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            var bug = await _context.Bug.FindAsync(id);
 
-            if (bug != null)
+            using (var client = new HttpClient())
             {
-                Bug = bug;
-                _context.Bug.Remove(Bug);
-                await _context.SaveChangesAsync();
+                var request = new HttpRequestMessage();
+
+                request.RequestUri = new Uri($"http://bugtrackerapi/api/Bugs/{Bug.BugId}");
+                request.Method = HttpMethod.Delete;
+
+                var response = await client.SendAsync(request);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    RedirectToPage("./../Error");
+                }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./../Index");
         }
     }
 }

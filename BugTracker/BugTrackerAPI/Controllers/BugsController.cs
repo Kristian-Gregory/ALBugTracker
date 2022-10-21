@@ -25,7 +25,7 @@ namespace BugTrackerAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Bug>>> GetBugs()
         {
-            var bugs = await _context.Bugs.Include("Assignee").ToListAsync();
+            var bugs = await _context.Bugs.Include("Person").ToListAsync();
             return bugs;
         }
 
@@ -33,7 +33,7 @@ namespace BugTrackerAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Bug>> GetBug(int id)
         {
-            var bug = await _context.Bugs.Include("Assignee").FirstOrDefaultAsync(bug => bug.BugId == id);
+            var bug = await _context.Bugs.Include("Person").FirstOrDefaultAsync(bug => bug.BugId == id);
 
             if (bug == null)
             {

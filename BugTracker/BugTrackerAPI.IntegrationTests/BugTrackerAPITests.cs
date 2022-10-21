@@ -47,7 +47,7 @@ namespace BugTrackerAPI.IntegrationTests
             var bugJson = await response.Content.ReadAsStringAsync();
             var bug = JObject.Parse(bugJson).ToObject<Bug>();
             response.StatusCode.Should().Be(HttpStatusCode.OK);
-            bug.Assignee.Name.Should().Be("Grace Hopper");
+            bug.Person.Name.Should().Be("Grace Hopper");
         }
 
         [Fact(DisplayName = "Create new bug")]

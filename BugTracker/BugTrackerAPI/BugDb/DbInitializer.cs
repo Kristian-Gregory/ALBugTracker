@@ -54,7 +54,7 @@ namespace BugTrackerAPI.BugDb
                     Description = "Performance poor on linux client when signing up users",
                     ReportedDate = DateTime.ParseExact("2021-09-01", "yyyy-MM-dd", provider),
                     State = BugState.Open,
-                    Assignee = ada
+                    Person = ada
                 },
                 new Bug
                 {
@@ -62,7 +62,7 @@ namespace BugTrackerAPI.BugDb
                     Description = "Application stopped working unexpectedly at exactly midnight",
                     ReportedDate = DateTime.Parse("2000-01-01"),
                     State = BugState.Closed,
-                    Assignee = tim
+                    Person = tim
                 },
                 new Bug
                 {
@@ -70,21 +70,21 @@ namespace BugTrackerAPI.BugDb
                     Description = "Coffee machine stopped outputting valid beverage during critical business hours leading to severe developer impact",
                     ReportedDate = DateTime.Parse("2021-04-28"),
                     State = BugState.Open,
-                    Assignee = kev
+                    Person = kev
                 },
                 new Bug
                 {
                     Title = "Gaps in user documentation for feature still in beta",
                     Description = "Developer insists code is self-documenting but users disagree",
                     ReportedDate = DateTime.Parse("2022-10-18"),
-                    Assignee = kev
+                    Person = kev
                 },
                 new Bug
                 {
                     Title = "Insect within computational unit",
                     Description = "An insect within the hardware module is causing surprising behaviour",
                     ReportedDate = DateTime.Parse("2002-09-01"),
-                    Assignee = grace
+                    Person = grace
                 },
             };
 

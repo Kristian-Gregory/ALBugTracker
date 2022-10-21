@@ -7,37 +7,45 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BugTrackerFrontend.Data;
 using BugTrackerModel;
+using Newtonsoft.Json;
+using System.Net.Mime;
+using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace BugTrackerFrontend.Pages.Bugs
 {
     public class DetailsModel : PageModel
     {
-        private readonly BugTrackerFrontend.Data.BugTrackerFrontendContext _context;
-
-        public DetailsModel(BugTrackerFrontend.Data.BugTrackerFrontendContext context)
-        {
-            _context = context;
-        }
-
       public Bug Bug { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Bug == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var bug = await _context.Bug.FirstOrDefaultAsync(m => m.BugId == id);
-            if (bug == null)
+            using (var client = new HttpClient())
             {
-                return NotFound();
+                var request = new HttpRequestMessage();
+
+                request.RequestUri = new Uri($"http://bugtrackerapi/api/Bugs/{id}");
+                request.Method = HttpMethod.Get;
+
+                var response = await client.SendAsync(request);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return NotFound();
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+
+                Bug = JObject.Parse(json).ToObject<Bug>();
             }
-            else 
-            {
-                Bug = bug;
-            }
+
             return Page();
+
         }
     }
 }

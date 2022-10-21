@@ -15,7 +15,8 @@ namespace BugTrackerModel
         [DataType(DataType.Date)]
         public DateTime ReportedDate { get; set; }
 
-        public virtual Person? Assignee { get; set; }
+        public int? PersonId { get; set; }
+        public virtual Person? Person { get; set; }
 
     }
     public enum BugState

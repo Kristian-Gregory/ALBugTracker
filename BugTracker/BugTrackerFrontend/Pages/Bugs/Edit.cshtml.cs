@@ -8,34 +8,58 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BugTrackerFrontend.Data;
 using BugTrackerModel;
+using Newtonsoft.Json;
+using System.Net.Mime;
+using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace BugTrackerFrontend.Pages.Bugs
 {
     public class EditModel : PageModel
     {
-        private readonly BugTrackerFrontend.Data.BugTrackerFrontendContext _context;
-
-        public EditModel(BugTrackerFrontend.Data.BugTrackerFrontendContext context)
-        {
-            _context = context;
-        }
+        [BindProperty]
+        public Bug Bug { get; set; }
 
         [BindProperty]
-        public Bug Bug { get; set; } = default!;
+        public IEnumerable<Person> AllAssignees { get; set; }
+
+        [BindProperty]
+        public string SelectedAssigneePersonId { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Bug == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var bug =  await _context.Bug.FirstOrDefaultAsync(m => m.BugId == id);
-            if (bug == null)
+            using (var client = new HttpClient())
             {
-                return NotFound();
+                var request = new HttpRequestMessage();
+
+                request.RequestUri = new Uri($"http://bugtrackerapi/api/Bugs/{id}");
+                request.Method = HttpMethod.Get;
+
+                var response = await client.SendAsync(request);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return NotFound();
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+
+                Bug = JObject.Parse(json).ToObject<Bug>();
+
+                
             }
-            Bug = bug;
+
+            await PopulateAssignees(); 
+            if (Bug.Person != null)
+            {
+                SelectedAssigneePersonId = Bug.Person.PersonId.ToString();
+            }
+
             return Page();
         }
 
@@ -48,30 +72,46 @@ namespace BugTrackerFrontend.Pages.Bugs
                 return Page();
             }
 
-            _context.Attach(Bug).State = EntityState.Modified;
+            await PopulateAssignees();
 
-            try
+            using (var client = new HttpClient())
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BugExists(Bug.BugId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                var request = new HttpRequestMessage();
+
+                request.RequestUri = new Uri($"http://bugtrackerapi/api/Bugs/{Bug.BugId}");
+                request.Method = HttpMethod.Put;
+
+                Bug.Person = AllAssignees.First(x => x.PersonId == Int32.Parse(SelectedAssigneePersonId));
+                Bug.PersonId = Int32.Parse(SelectedAssigneePersonId);
+
+                var json = JsonConvert.SerializeObject(Bug);
+
+                request.Content = new StringContent(json, Encoding.UTF8, MediaTypeNames.Application.Json);
+                var response = await client.SendAsync(request);
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./../Index");
         }
 
-        private bool BugExists(int id)
+        private async Task PopulateAssignees()
         {
-          return _context.Bug.Any(e => e.BugId == id);
+            using (var client = new HttpClient())
+            {
+                var request = new HttpRequestMessage();
+
+                request.RequestUri = new Uri($"http://bugtrackerapi/api/People");
+                request.Method = HttpMethod.Get;
+
+                var response = await client.SendAsync(request);
+
+                var json = await response.Content.ReadAsStringAsync();
+
+                var personJson = await response.Content.ReadAsStringAsync();
+                var persons = JArray.Parse(personJson);
+                AllAssignees = persons.ToObject<List<Person>>();
+            }
         }
+
+
     }
 }

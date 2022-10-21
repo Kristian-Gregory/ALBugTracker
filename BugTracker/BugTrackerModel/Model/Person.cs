@@ -9,5 +9,6 @@ namespace BugTrackerModel
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
         public string Name { get; set; }
+
     }
 }
