@@ -19,6 +19,9 @@ When I set out to design the application I wanted to optimize for the following.
 To run the application, from the 'BugTracker' folder run
 docker-compose up
 
+# Testing the application
+the docker-compose command above will start a 4th container that will execute a set of integration tests that target the API. It doesn't do anything with the test results at present but the output can be examined by inspecting the container logs.
+
 I've added a static port of 8443 on the front end web application so you should always be able to find the web application at
 https://localhost:8443
 
