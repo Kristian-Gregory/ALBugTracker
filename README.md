@@ -31,8 +31,10 @@ http://localhost:8180/swagger
 
 # Improvements and Next Steps
 Currently the API is using http, this needs to be made https 
-End-to-end browser testing would be useful here, a selenium based test repository would add an important layer
-GitHub actions to create a CI pipeline for code scanning would help raise overall code quality
+* End-to-end browser testing would be useful here, a selenium based test repository would add an important layer
+* GitHub actions to create a CI pipeline for code scanning would help raise overall code quality
+* The application needs authentication
+* Razor unit tests could be introduced. I haven't introduced them already as the razor logic is mostly boiler plate, and also in the interests of time
 
 
 # Difficulties encountered
