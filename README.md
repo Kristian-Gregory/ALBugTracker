@@ -23,6 +23,7 @@ You'll need docker, including docker-compose
 
 ## execution
 To run the application, from the 'BugTracker' folder run
+
 docker-compose up
 
 # Testing the application
