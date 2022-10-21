@@ -38,8 +38,7 @@ http://localhost:8180/swagger
 I have not implemented all requested features. You should be able to do the following
 - view list of bugs
 - create a bug
-- assign a bug
-- edit a bug
+- edit a bug (including assign)
 - delete a bug
 
 # Make it pretty
