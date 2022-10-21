@@ -16,7 +16,6 @@ When I set out to design the application I wanted to optimize for the following.
 * I wanted the database to be drawn from code automatically so I didn't need to add any additional steps for you to get started, and to allow for the database to be casually disposed of and rebuilt during early development
 
 
-
 # Running the application
 ## Prerequisites
 You'll need docker, including docker-compose
@@ -52,7 +51,8 @@ Currently the API is using http, this needs to be made https
 * GitHub actions to create a CI pipeline for code scanning would help raise overall code quality
 * The application needs authentication
 * Razor unit tests could be introduced. I haven't introduced them already as the razor logic is mostly boiler plate, and also in the interests of time
-
+* There's some NuGet packages I introduced that later I didn't need, these need cleaning up
+* There's some minor warnings on the build that should be addressed
 
 # Difficulties encountered
 I found I needed to switch to a more powerful development machine as the containers, particularly the sequel server container, were quite heavyweight and I initially set out on an inadequate machine for a dev task involving locally hosting this many containers.
