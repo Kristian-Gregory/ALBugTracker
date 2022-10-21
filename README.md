@@ -22,8 +22,7 @@ When I set out to design the application I wanted to optimize for the following.
 You'll need docker, including docker-compose
 
 ## execution
-To run the application, from the 'BugTracker' folder run
-
+To run the application, from the 'BugTracker' folder run  
 docker-compose up
 
 # Testing the application
