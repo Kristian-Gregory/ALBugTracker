@@ -35,6 +35,17 @@ https://localhost:8443
 Swagger docs for the API can be found at
 http://localhost:8180/swagger
 
+# Current user journeys supported
+I have not implemented all requested features. You should be able to do the following
+- view list of bugs
+- create a bug
+- assign a bug
+- edit a bug
+- delete a bug
+
+# Make it pretty
+It isn't very pretty. I don't have experience here so there's little point me trying to demonstrate skill in this area.
+
 # Improvements and Next Steps
 Currently the API is using http, this needs to be made https 
 * End-to-end browser testing would be useful here, a selenium based test repository would add an important layer
