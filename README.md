@@ -15,7 +15,13 @@ When I set out to design the application I wanted to optimize for the following.
 * I wanted the database to be very loosely coupled, so that it is easy to see how you might go from developing with a local DB container, to a production database service
 * I wanted the database to be drawn from code automatically so I didn't need to add any additional steps for you to get started, and to allow for the database to be casually disposed of and rebuilt during early development
 
+
+
 # Running the application
+## Prerequisites
+You'll need docker, including docker-compose
+
+## execution
 To run the application, from the 'BugTracker' folder run
 docker-compose up
 
