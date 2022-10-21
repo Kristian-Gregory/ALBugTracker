@@ -25,9 +25,16 @@ https://localhost:8443
 # Swagger API documentation
 Swagger docs for the API can be found at
 http://localhost:8180/swagger
-TODO: make the API https only
+
+# Improvements and Next Steps
+Currently the API is using http, this needs to be made https 
+End-to-end browser testing would be useful here, a selenium based test repository would add an important layer
+GitHub actions to create a CI pipeline for code scanning would help raise overall code quality
+
 
 # Difficulties encountered
 I found I needed to switch to a more powerful development machine as the containers, particularly the sequel server container, were quite heavyweight and I initially set out on an inadequate machine for a dev task involving locally hosting this many containers.
 Documentation was more difficult to come by for developing the app after I separated the API and the WebApp into separate containers
 EF6.0 allowed default lazy loading, whereas EFCore requires child objects to be explicitly requested for loading. This took some time to identify and debug.
+Visual Studio doesn't currently support hot loading for web apps hosted in containers, slowing the dev/test cycle considerably
+EFCore relies heavily on convention, and if you stray from those conventions, it can be really tough to work out what's going on
